@@ -1,0 +1,144 @@
+{
+  "info": {
+    "_postman_id": "09d3e4c1-7ed6-4b15-bb0e-51b77e6fc255",
+    "name": "GenAI - API LLM Practice",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "5015921"
+  },
+  "item": [
+    {
+      "name": "S09- TextFromImage-base64",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"messages\": [\r\n    {\r\n      \"role\": \"user\",\r\n      \"content\": [\r\n        {\r\n          \"type\": \"text\",\r\n          \"text\": \"Analyse the image in this url and identify this iconic location. Once you have done that, generate a paragraph with the history of the place in Bengali\"\r\n        },\r\n        {\r\n          \"type\": \"image_url\",\r\n          \"image_url\": {\r\n            \"url\": \"https://stock.adobe.com/in/search?k=kolkata&asset_id=273980161\"\r\n          }\r\n        }\r\n      ]\r\n    }\r\n  ],\r\n  \"model\": \"meta-llama/llama-4-scout-17b-16e-instruct\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.groq.com/openai/v1/chat/completions",
+          "protocol": "https",
+          "host": [
+            "api",
+            "groq",
+            "com"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "chat",
+            "completions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "S01-Audio Transcript",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Text to Speech",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"model\": \"canopylabs/orpheus-v1-english\",\r\n    \"input\": \"Hey, I am practicicng assignments here\",\r\n    \"voice\": \"daniel\",\r\n    \"response_format\": \"wav\"\r\n  }\r\n\r\n  //autumn diana hannah austin daniel troy",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://api.groq.com/openai/v1/audio/speech",
+          "protocol": "https",
+          "host": [
+            "api",
+            "groq",
+            "com"
+          ],
+          "path": [
+            "openai",
+            "v1",
+            "audio",
+            "speech"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "S02- MultiLingual",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "S03-GenerateAPITestcasesFromSwaggerCode",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "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",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base64_img",
+      "value": ""
+    }
+  ]
+}
